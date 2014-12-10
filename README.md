@@ -35,6 +35,8 @@ Example parameters:
 	# Stitching tiles from a local MBTiles file
 	python stitch.py -- -77.0471,38.8790,-77.0299,38.8891 pathTo/fileName.mbtiles
 
-#### Limitation
-Only 200 tiles can be downloaded from Bing Aerial Maps or any web map with [OpenStreetMap](http://osm.org) tiling scheme.
-You can use [TileMill](http://www.mapbox.com/tilemill/) to produce your own tiles in the [MBTiles](http://www.mbtiles.org) format.
+#### Running
+Notes to myself:
+python stitch.py -z 4 " -180.0,-84.9,180.0,84.9" gbif
+python stitch.py -z 4 " -180.0,-84.9,180.0,84.9" base
+

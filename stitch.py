@@ -10,6 +10,8 @@ import sys, os, argparse, logging
 from bing_aerial import BingAerial
 from osm_tiles import OsmTiles
 from mbtiles import Mbtiles
+from gbif import GBIFTiles
+from background import BackgroundTiles
 
 parser = argparse.ArgumentParser()
 parser.add_argument("bbox", help="area bbox coordinates in the form left,bottom,right,top; example: 26.7188,58.3786,26.72067,58.3791")
@@ -23,6 +25,10 @@ bbox = [float(i) for i in args.bbox.split(",")]
 
 if args.source == "bing":
 	tiles = BingAerial()
+elif args.source == "gbif":
+	tiles = GBIFTiles()
+elif args.source == "base":
+	tiles = BackgroundTiles()
 elif len(args.source)>7 and args.source[:7] == "http://":
 	tiles = OsmTiles(args.source)
 elif len(args.source)>8 and os.path.isfile(args.source) and args.source[-8:] == ".mbtiles":

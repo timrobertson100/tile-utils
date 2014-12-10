@@ -5,7 +5,7 @@ from PIL import Image
 import util
 
 class Base():
-	maxTileNumber = 200
+	maxTileNumber = 2000
 	tileWidth = 256
 	tileHeight = 256
 	numSubdomains = 0
